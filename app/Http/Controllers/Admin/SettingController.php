@@ -22,6 +22,15 @@ class SettingController extends Controller
         $settings = Setting::pluck('value','name')->all();
         $all_columns =array(
             array(
+		        'name'=>'email',
+		        'id'=>'email',
+		        'type'=>'email',
+		        'label'=>'Order Recieving mail',
+		        'class'=>'form-control form-control-solid',
+                'place_holder'=>'abc@abc.com',
+		        'style'=>'width:80px;max-width:100%;padding:12px;margin-bottom:10px'
+	        ),
+            array(
                 'name'=>'site_title',
                 'id'=>'site_title',
                 'type'=>'text',
@@ -72,6 +81,15 @@ class SettingController extends Controller
                 'class'=>'custom-file-input',
                 'style'=>'width:80px;max-width:100%;padding:12px;margin-bottom:10px'
             ),
+            array(
+                'name'=>'banner_image',
+                'id'=>'banner_image',
+                'type'=>'file',
+                'label'=>'Banner Image',
+                'class'=>'custom-file-input',
+                'style'=>'width:80px;max-width:100%;padding:12px;margin-bottom:10px'
+            ),
+            
             array(
                 'name'=>'logo',
                 'type'=>'hidden',
@@ -131,11 +149,7 @@ class SettingController extends Controller
             'all_columns'=>$all_columns]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
@@ -222,46 +236,25 @@ class SettingController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+  
     public function destroy($id)
     {
         //

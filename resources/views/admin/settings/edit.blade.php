@@ -91,6 +91,13 @@
                         <span class="text-danger">{{ $errors->first('password') }}</span>
                       </div>
                     </div>
+                    <div class="form-group row {{ $errors->has('profile_image') ? 'has-error' : '' }}">
+                      <label class="col-3">Profile Image</label>
+                      <div class="col-9">
+                        <input type="file" name="profile_image" class="form-control form-control-solid">
+                      </div>
+                    </div>
+                    
 
                   </div>
 

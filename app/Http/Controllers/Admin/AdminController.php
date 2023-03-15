@@ -84,6 +84,20 @@ class AdminController extends Controller
         } else {
             $input['password'] = bcrypt($input['password']);
         }
+        if ($request->hasFile('profile_image')) {
+			if ($request->file('profile_image')->isValid()) {
+				$this->validate($request, [
+					'profile_image' => 'required|mimes:jpeg,png,jpg'
+				]);
+				$file = $request->file('profile_image');
+				$destinationPath = public_path('/uploads');
+				//$extension = $file->getClientOriginalExtension('logo');
+				$thumbnail = $file->getClientOriginalName('profile_image');
+				$thumbnail = rand() . $thumbnail;
+				$request->file('profile_image')->move($destinationPath, $thumbnail);
+                $input['profile_image'] = $thumbnail;
+			}
+		}
         $admin->fill($input)->save();
         Session::flash('success_message', 'Great! admin successfully updated!');
         return redirect()->back();

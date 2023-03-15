@@ -19,8 +19,8 @@ class CreateChartsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('account_id');
             $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
-            $table->date('date');
-            $table->string('value');
+            $table->date('date')->nullable();
+            $table->string('value')->nullable();
             $table->timestamps();
         });
     }
