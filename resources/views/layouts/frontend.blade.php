@@ -99,21 +99,22 @@
                                 </a>
                             </div>
                             <div class="col collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                                <ul class="navbar-nav top-nav-menu">
-                                    <li class="nav-item top-nav-menu-item {{ (request()->segment(2) == 'about-us') ? 'active' : '' }}">
+                                <ul class="navbar-nav top-nav-menu ">
+                                
+                                    <li class="nav-item top-nav-menu-item @if(Route::current()->getName() == 'aboutus') active @endif">
                                         <a class="nav-link top-nav-menu-item-link " href="{{route('aboutus') }}" class="">About Us</a>
                                     </li>
-                                    <li class="nav-item top-nav-menu-item {{ (request()->segment(2) == 'galaries') ? 'active' : '' }}">
+                                    <li class="nav-item top-nav-menu-item @if(Route::current()->getName() == 'galleries') active @endif">
                                         <a class="nav-link top-nav-menu-item-link" href="{{route('galleries')}}" class="">Gallery</a>
                                     </li>
-                                    <li class="nav-item top-nav-menu-item">
+                                    <li class="nav-item top-nav-menu-item @if(Route::current()->getName() == 'testimonial') active @endif">
                                         <a class="nav-link top-nav-menu-item-link" href="{{route('testimonial')}}" class="">Testimonials</a>
                                     </li>
-                                    <li class="nav-item top-nav-menu-item">
-                                        <a class="nav-link top-nav-menu-item-link" href="{{url('/'.'#payment-form'  )}}" class="">BOOK IN 60 SECONDS</a>
+                                    <li class="nav-item top-nav-menu-item @if(Route::current()->getName() == 'frontend') active @endif">
+                                        <a class="nav-link top-nav-menu-item-link " href="{{url('/'.'#payment-form'  )}}" class="">BOOK IN 60 SECONDS</a>
                                     </li>
                                     <li class="nav-item top-nav-menu-item">
-                                        <a class="nav-link top-nav-menu-item-link" href="{{route('login')}}" class="">LOGIN</a>
+                                        <a class="nav-link top-nav-menu-item-link @if(Route::current()->getName() == 'login') active @endif" href="{{route('login')}}" class="">LOGIN</a>
                                     </li>
                                 </ul>
                             </div>
