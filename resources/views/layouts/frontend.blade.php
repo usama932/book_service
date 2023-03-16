@@ -17,7 +17,10 @@
     <link href="{{asset('frontend/js/css/lightbox.min.css')}}" rel="stylesheet">
     <!-- MAIN SITE STYLE SHEETS -->
     <link href="{{asset('frontend/js/css/main.css')}}" rel="stylesheet">
-
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    
     <title>Booking Service</title>
 
 </head>
