@@ -9,6 +9,7 @@ use App\Http\Controllers\frontend\FrontendController;
 Route::get('/', 'frontend\FrontendController@home')->name('frontend');
 Route::get('/about-us', 'frontend\FrontendController@getaboutus')->name('aboutus');
 Route::get('/testionial', 'frontend\FrontendController@gettestimonial')->name('testimonial');
+Route::get('/galaries', 'frontend\FrontendController@getgallery')->name('galleries');
 Route::resource('check_orders','HomeController')->except('index');
 Route::post('/check_orders', 'frontend\FrontendController@order_store')->name('check_orders.store');
 Route::get('/login', function () {

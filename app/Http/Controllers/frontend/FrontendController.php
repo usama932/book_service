@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Validator;
 use Mail;
 use App\Models\Setting;
 use App\Models\Testimonial;
+use App\Models\Gallery;
 
 class FrontendController extends Controller
 {
@@ -117,11 +118,16 @@ class FrontendController extends Controller
         
     }
     public function gettestimonial(){
+       
         $testimonials = Testimonial::latest()->get();
         return view('frontend.testimonials',compact('testimonials'));
     }
     public function getaboutus()
     {
         return view('frontend.about');
+    }
+    public function getgallery(){
+        $galleries = Gallery::latest()->get();
+        return view('frontend.gallery',compact('galleries'));
     }
 }
