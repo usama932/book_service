@@ -134,7 +134,14 @@ class SettingController extends Controller
                 'value'=>'',
 
             ),
-
+            array(
+                'name'=>'aboutus',
+                'id'=>'aboutus',
+                'type'=>'textarea',
+                'label'=>'Test About Us Section',
+                'place_holder'=>'Enter About Us Section',
+                'class'=>'form-control form-control-solid',
+            ),
             array(
                 'name'=>'copy_right',
                 'id'=>'copy_right',
@@ -143,6 +150,52 @@ class SettingController extends Controller
                 'place_holder'=>'Enter Copyright text',
                 'class'=>'form-control form-control-solid',
             ),
+            array(
+		        'name'=>'phone',
+		        'id'=>'phone',
+		        'type'=>'number',
+		        'label'=>'Phone #',
+		        'class'=>'form-control form-control-solid',
+                'place_holder'=>'+1(000) 000 0000 ',
+		        'style'=>'width:80px;max-width:100%;padding:12px;margin-bottom:10px'
+	        ),
+            array(
+		        'name'=>'twitter',
+		        'id'=>'twitter',
+		        'type'=>'url',
+		        'label'=>'Twitter Link',
+		        'class'=>'form-control form-control-solid',
+                'place_holder'=>'https://www.abc.com/231231 ',
+		        'style'=>'width:80px;max-width:100%;padding:12px;margin-bottom:10px'
+	        ),
+            array(
+		        'name'=>'youtube',
+		        'id'=>'youtube',
+		        'type'=>'url',
+		        'label'=>'Youtube Link',
+		        'class'=>'form-control form-control-solid',
+                'place_holder'=>'https://www.abc.com/231231 ',
+		        'style'=>'width:80px;max-width:100%;padding:12px;margin-bottom:10px'
+	        ),
+            array(
+		        'name'=>'facebook',
+		        'id'=>'facebook',
+		        'type'=>'url',
+		        'label'=>'Facebook Link',
+		        'class'=>'form-control form-control-solid',
+                'place_holder'=>'https://www.abc.com/231231 ',
+		        'style'=>'width:80px;max-width:100%;padding:12px;margin-bottom:10px'
+	        ),
+            array(
+		        'name'=>'instagram',
+		        'id'=>'instagram',
+		        'type'=>'url',
+		        'label'=>'Instagram Link',
+		        'class'=>'form-control form-control-solid',
+                'place_holder'=>'https://www.abc.com/231231 ',
+		        'style'=>'width:80px;max-width:100%;padding:12px;margin-bottom:10px'
+	        ),
+
 
         );
         return view('admin.settings.index', ['title' => 'Site Setting','settings'=>$settings,

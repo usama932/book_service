@@ -67,6 +67,14 @@
                               </div>
                            </div>
                            @endif
+                           @if($column['type']=="number")
+                           <div class="form-group row">
+                              <label class="col-3">{{$column['label']}}</label>
+                              <div class="col-9">
+                                 <input class="{{$column['class']}}" type="text" name="{{$column['name']}}" placeholder="{{$column['place_holder']}}" value="{{ isset($settings[$column['name']]) ? $settings[$column['name']] : ''}}" >
+                              </div>
+                           </div>
+                           @endif
                            @if($column['type']=="text")
                            <div class="form-group row">
                               <label class="col-3">{{$column['label']}}</label>
@@ -126,6 +134,15 @@
                                     value="{{$column['value']}}"><span></span>
                                  </label>
                                  </span>
+                              </div>
+                           </div>
+                           @endif
+                           
+                           @if($column['type']=="url")
+                           <div class="form-group row">
+                              <label class="col-3">{{$column['label']}}</label>
+                              <div class="col-9">
+                                 <input class="{{$column['class']}}" type="text" name="{{$column['name']}}" placeholder="{{$column['place_holder']}}" value="{{ isset($settings[$column['name']]) ? $settings[$column['name']] : ''}}" >
                               </div>
                            </div>
                            @endif

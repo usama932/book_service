@@ -25,12 +25,20 @@
      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 	
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    <title>Book in 60 seconds - Xtreme Cleanings</title>
+    <title>Booking Serivce</title>
 
 </head>
 
 <body class="d-flex flex-column min-vh-100 justify-content-center justify-content-md-between">
-
+    @php
+        use App\Models\Setting;
+        $phone = Setting::where('name','phone')->first();
+        $facebook = Setting::where('name','facebook')->first();
+        $instagram = Setting::where('name','instagram')->first();
+        $twitter = Setting::where('name','twitter')->first();
+        $email = Setting::where('name','email')->first(); 
+        $youtube = Setting::where('name','youtube')->first();
+    @endphp 
     <header>
         <div class="header-top d-none d-lg-block">
             <div class="container">
@@ -40,13 +48,13 @@
                             <li class="header-top-list-item">
                                 <a href="tel:12334567890" class="header-top-list-item-link">
                                     <i class="fas fa-phone"></i>
-                                    <span>1 (233) 456 7890</span>
+                                    <span>{{$phone->value ?? '+1(000) 000 0000'}}</span>
                                 </a>
                             </li>
                             <li class="header-top-list-item">
-                                <a href="mailto:support@xtremecleanings" class="header-top-list-item-link">
+                                <a href="mailto:{{$email->value ?? 'abc@abc.com'}}" class="header-top-list-item-link">
                                     <i class="fas fa-envelope"></i>
-                                    <span>support@xtremecleanings</span>
+                                    <span>{{$email->value ?? 'abc@abc.com'}}</span>
                                 </a>
                             </li>
                         </ul>
@@ -54,22 +62,22 @@
                     <div class="col-md-4">
                         <ul class="top-socials d-flex justify-content-end">
                             <li class="d-flex">
-                                <a href="#">
+                                <a href="{{$facebook->value ?? ''}}">
                                     <i class="fab fa-facebook"></i>
                                 </a>
                             </li>
                             <li class="d-flex">
-                                <a href="#">
+                                <a href="{{$twitter->value ?? ''}}">
                                     <i class="fab fa-twitter"></i>
                                 </a>
                             </li>
                             <li class="d-flex">
-                                <a href="#">
+                                <a href="{{$instagram->value ?? ''}}">
                                     <i class="fab fa-instagram"></i>
                                 </a>
                             </li>
                             <li class="d-flex">
-                                <a href="#">
+                                <a href="{{$youtube->value ?? ''}}">
                                     <i class="fab fa-youtube"></i>
                                 </a>
                             </li>
@@ -85,12 +93,12 @@
                     <div class="col-md-4">
                         <ul class="top-nav-menu d-flex">
                             <li class="top-nav-menu-item">
-                                <a href="{{url('/login')}}" class="top-nav-menu-item-link">
-                                    <span>LOGIN</span>
+                                <a href="" class="top-nav-menu-item-link">
+                                    <span>Gallery</span>
                                 </a>
                             </li>
                             <li class="top-nav-menu-item">
-                                <a href="" class="top-nav-menu-item-link">
+                                <a href="{{route('testimonial')}}" class="top-nav-menu-item-link">
                                     <span>Testimonials</span>
                                 </a>
                             </li>
@@ -104,7 +112,7 @@
                     <div class="col-md-4">
                         <ul class="top-nav-menu d-flex">
                             <li class="top-nav-menu-item">
-                                <a href="" class="top-nav-menu-item-link">
+                                <a href="{{route('aboutus')}}" class="top-nav-menu-item-link">
                                     <span>About Us</span>
                                 </a>
                             </li>
@@ -135,13 +143,13 @@
                             <div class="col collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{url('/login')}}" class="">Login</a>
+                                        <a class="nav-link" href="" class="">Gallery</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="" class="">Testimonials</a>
+                                        <a class="nav-link" href="{{route('testimonial')}}" class="">Testimonials</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="" class="">About Us</a>
+                                        <a class="nav-link" href="{{route('aboutus')}}" class="">About Us</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{url('/'.'#payment-form'  )}}" class="">BOOK IN 60 SECONDS</a>
@@ -166,7 +174,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        © 2023 Xtreme Cleanings | All Rights Reserved
+                        © 2023 Booking Serivce | All Rights Reserved
                     </div>
                 </div>
             </div>

@@ -34,60 +34,7 @@
 			<div class="login-content flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto">
 				<!--begin::Content body-->
 				<div class="d-flex flex-column-fluid flex-center">
-					<!--begin::Signin-->
-					
-					<!--end::Signin-->
-					<!--begin::Signup-->
-				{{--<div class="login-form login-signup">
-					<!--begin::Form-->
-					<form class="form" novalidate="novalidate" id="kt_login_signup_form">
-						<!--begin::Title-->
-						<div class="pb-13 pt-lg-0 pt-5">
-							<h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Sign Up</h3>
-							<p class="text-muted font-weight-bold font-size-h4">Enter your details to create your account</p>
-						</div>
-						<!--end::Title-->
-						<!--begin::Form group-->
-						<div class="form-group">
-							<input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6" type="text" placeholder="Fullname" name="fullname" autocomplete="off" />
-						</div>
-						<!--end::Form group-->
-						<!--begin::Form group-->
-						<div class="form-group">
-							<input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6" type="email" placeholder="Email" name="email" autocomplete="off" />
-						</div>
-						<!--end::Form group-->
-						<!--begin::Form group-->
-						<div class="form-group">
-							<input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6" type="password" placeholder="Password" name="password" autocomplete="off" />
-						</div>
-						<!--end::Form group-->
-						<!--begin::Form group-->
-						<div class="form-group">
-							<input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6" type="password" placeholder="Confirm password" name="cpassword" autocomplete="off" />
-						</div>
-						<!--end::Form group-->
-						<!--begin::Form group-->
-						<div class="form-group">
-							<label class="checkbox mb-0">
-								<input type="checkbox" name="agree" />
-								<span></span>
-								<div class="ml-2">I Agree the
-									<a href="#">terms and conditions</a>.</div>
-							</label>
-						</div>
-						<!--end::Form group-->
-						<!--begin::Form group-->
-						<div class="form-group d-flex flex-wrap pb-lg-0 pb-3">
-							<button type="button" id="kt_login_signup_submit" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-4">Submit</button>
-							<button type="button" id="kt_login_signup_cancel" class="btn btn-light-primary font-weight-bolder font-size-h6 px-8 py-4 my-3">Cancel</button>
-						</div>
-						<!--end::Form group-->
-					</form>
-					<!--end::Form-->
-				</div>--}}
-				<!--end::Signup-->
-					<!--begin::Forgot-->
+		
 				<div class="login-formt">
 					<!--begin::Form-->
 					@if (session('status'))
@@ -123,15 +70,7 @@
 				</div>
 				<!--end::Content body-->
 				<!--begin::Content footer-->
-				<div class="d-flex justify-content-lg-start justify-content-center align-items-end py-7 py-lg-0">
-					<div class="text-dark-50 font-size-lg font-weight-bolder mr-10">
-						<span class="mr-1">{{ date('Y') }}©</span>
-						<a href="https://newswatchtv.com" target="_blank" class="text-dark-75 text-hover-primary">{{ $copy_right }}</a>
-					</div>
-					<a href="https://newswatchtv.com/reviews/" target="_blank" class="text-primary font-weight-bolder font-size-lg">Reviews</a>
-					<a href="https://newswatchtv.com/about-us/" target="_blank" class="text-primary ml-5 font-weight-bolder font-size-lg">About</a>
-					<a href="https://newswatchtv.com/contact-us/" target="_blank" class="text-primary ml-5 font-weight-bolder font-size-lg">Contact</a>
-				</div>
+				
 				<!--end::Content footer-->
 			</div>
 			<!--end::Content-->

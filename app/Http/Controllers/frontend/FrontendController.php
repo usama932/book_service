@@ -18,6 +18,7 @@ use Response;
 use Illuminate\Support\Facades\Validator;
 use Mail;
 use App\Models\Setting;
+use App\Models\Testimonial;
 
 class FrontendController extends Controller
 {
@@ -27,7 +28,8 @@ class FrontendController extends Controller
         $extra_services = ExtraService::all();
         return view('frontend.home',compact('services','extra_services','setting'));
     }
-    public function order_store(Request $request){
+    public function order_store(Request $request)
+    {
         $validator = Validator::make($request->all(), [
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
@@ -113,5 +115,13 @@ class FrontendController extends Controller
             return redirect()->back()->with('success','Cogratulation..! Booking Successfully');
             }
         
-        }
+    }
+    public function gettestimonial(){
+        $testimonials = Testimonial::latest()->get();
+        return view('frontend.testimonials',compact('testimonials'));
+    }
+    public function getaboutus()
+    {
+        return view('frontend.about');
+    }
 }
