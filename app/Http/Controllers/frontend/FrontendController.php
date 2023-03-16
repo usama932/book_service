@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use Stripe;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\ExtraService;
@@ -13,7 +14,6 @@ use App\Models\OrderExtra;
 use App\Models\Order;
 use Auth;
 use Illuminate\Support\Facades\Session;
-use Stripe;
 use Response;
 use Illuminate\Support\Facades\Validator;
 use Mail;
@@ -54,9 +54,6 @@ class FrontendController extends Controller
         else
             {
           
-            
-          
-            
             Stripe\Stripe::setApiKey('sk_test_1IUO2lMwmjt2FwXFOdsPridh');
             $stripe = Stripe\Charge::create([
                 "amount" => $totalbills[1] * 100,

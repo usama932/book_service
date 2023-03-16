@@ -314,13 +314,18 @@
         
 @endsection
 @push('custom-scripts')
-    <script>
+     <script>
         $(document).ready(function() {
             function validate() {
                 var sum = 0; 
                 sum += +$('#result').val();
-                var markedCheckbox  = '';
-
+                
+              
+                
+                //loop through checked checkbox
+                $('#checker input:checked').each(function() {
+                sum += +$(this).data('price') //get dataprice add in sum
+                })
                 $('#services input:checked').each(function() {
                 sum += +$(this).data('price') //get dataprice add in sum
                 })
@@ -329,9 +334,9 @@
                 
                     document.querySelector('input[name="totalbill"]').value = '$'+bill ?? ''; 
                     $('#result').html(bill);
-                  
+                    var bedroom = $('#room_id option:selected').data('title') || 'Not Selected';
+                     $('#bedroom').html(bedroom);
                     $('#checker input:checked').each(function() {
-                        alert('asd');   
                     const service  = $(this).data('title') || 'Not Selected';
                     $('#extra_service').html(service);
                     })
@@ -341,7 +346,7 @@
             }
             validate();
         
-            $('input, #checker input').on('change', function() {
+            $('#bathroom_id, #discount_id,input, #room_id, #checker input').on('change', function() {
                 validate();
             });
         
