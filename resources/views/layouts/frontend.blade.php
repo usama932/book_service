@@ -137,7 +137,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        © 2023 Xtreme Cleanings | All Rights Reserved
+                        © 2023 Booking Service | All Rights Reserved
                     </div>
                 </div>
             </div>
